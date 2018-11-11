@@ -41,3 +41,24 @@ $light:         $gray-100 !default;
 $dark:          $fk-dark; 
  
 
+// Fonts
+// Google Fonts Source Sans Pro and Lora
+@import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Source+Sans+Pro:400,400i,700,700i');
+
+$font-family-sans-serif:   "Source Sans Pro", Calibri, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-serif: Lora, Helvetica, serif;
+
+$headings-font-family:        $font-family-serif;
+$headings-font-weight:        700;
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-style: italic;
+}
+
+// Links
+
+$link-color:                $secondary;
+$link-decoration:           underline !default;
+$link-hover-color:          darken($link-color, 15%);
+$link-hover-decoration:     underline !default;
