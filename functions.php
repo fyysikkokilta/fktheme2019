@@ -1,6 +1,6 @@
 <?php
 /**
- * Understrap functions and definitions
+ * FK2018 functions and definitions
  *
  * @package understrap
  */
