@@ -1,2 +1,56 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
  
+a {
+    font-weight: 700;
+}
+
+.navbar {
+
+    padding: 0.5rem 0;
+
+    .navbar-brand {
+        padding: 0;
+    }
+
+    h1 {
+        font-family: $font-family-sans-serif;
+        font-style: normal;
+        font-size: 1.5rem;
+        a {
+            text-decoration: none;
+        }
+    }
+
+    img {
+        max-width: 3rem; 
+    }
+}
+
+
+.calendar-item {
+    background-color: $dark;
+    width: 100%;
+    padding-bottom: 100%;
+    margin-top: $grid-gutter-width;
+
+    &.tapahtumat {
+        background-color: $eventorange;
+    }
+
+    &.ura {
+        background-color: $blue;
+    }
+
+    &.kokoukset {
+        background-color: $yellow;
+    }
+
+    &.kulttuuri {
+        background-color: $techred;
+    }
+
+    &.liikunta {
+        background-color: $green;
+    }
+}
+
