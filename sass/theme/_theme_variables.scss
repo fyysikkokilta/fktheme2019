@@ -56,9 +56,10 @@ h1, h2, h3, h4, h5, h6,
   font-style: italic;
 }
 
+
 // Links
  
-$link-color:                $secondary;
-$link-decoration:           underline !default;
+$link-color:                $orange;
+$link-decoration:           none !default;
 $link-hover-color:          darken($link-color, 15%);
 $link-hover-decoration:     underline !default;
