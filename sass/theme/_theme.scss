@@ -1,7 +1,7 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
  
 a {
-    font-weight: 700;
+    font-weight: $link-font-weight
 }
 
 .navbar {
@@ -34,23 +34,23 @@ a {
     margin-top: $grid-gutter-width;
 
     &.tapahtumat {
-        background-color: $eventorange;
+        background-color: $event-orange;
     }
 
     &.ura {
-        background-color: $blue;
+        background-color: $event-blue;
     }
 
     &.kokoukset {
-        background-color: $yellow;
+        background-color: $event-yellow;
     }
 
     &.kulttuuri {
-        background-color: $techred;
+        background-color: $event-techred;
     }
 
     &.liikunta {
-        background-color: $green;
+        background-color: $event-green;
     }
 }
 
