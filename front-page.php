@@ -18,19 +18,25 @@ $container   = get_theme_mod( 'understrap_container_type' );
 ?>
 
 <div class="wrapper-hero" id="page-wrapper">
-	<div class="container-fluid" id="content" tabindex="-1">
 		<?php
 			global $post;
-			$featuredImg = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID, 'large' ), 'Img' );
-			if ($featuredImg)
+		$featuredImg = get_theme_mod( 'fk_front_image' );
+		if ($featuredImg):
 		?>
-		<div class="row">
+	<section class="container-fluid" id="fk-front-image" tabindex="-1">
+
+			<div class="row" id="fk-image">
 			<div class="col-12 px-0">
-				<img class="img-fluid" src="<?php echo $featuredImg[0]; ?>">
+					<img class="img-fluid" src="<?php echo $featuredImg; ?>">
 			</div>
 		</div>
 
-		<div class="<?php echo esc_attr( $container ); ?>">
+	</section><!-- fk-head-image container end -->
+	<?php 
+		endif;
+	?>
+
+	<section class="<?php echo esc_attr( $container ); ?>"  id="fk-calendar">
 
 			<div class="row fk-calendar">
 				<div class="col"><div class="calendar-item tapahtumat"></div></div>
