@@ -14,33 +14,30 @@ if ( ! defined( 'ABSPATH' ) ) {
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
-
-<div class="wrapper" id="wrapper-footer">
-
+<footer class="wrapper" id="wrapper-footer">
+	
 	<div class="<?php echo esc_attr( $container ); ?>">
+
+		<?php if(is_front_page()) { ?> <!-- Show partners only on frontpage -->
 
 		<div class="row">
 
-			<div class="col-md-12">
+			<?php dynamic_sidebar( 'fk-partner-widgets' ); ?>
 
-				<footer class="site-footer" id="colophon">
+		</div>
 
-					<div class="site-info">
+		<hr class="col-xs-12">
+		<?php }; ?>
 
-						<!-- <?php understrap_site_info(); ?> -->
+		<div class="row">
 
-					</div><!-- .site-info -->
+			<?php dynamic_sidebar( 'fk-footer-widgets' ); ?>
 
-				</footer><!-- #colophon -->
-
-			</div><!--col end -->
-
-		</div><!-- row end -->
+		</div>
 
 	</div><!-- container end -->
 
-</div><!-- wrapper end -->
+</footer><!-- wrapper end -->
 
 </div><!-- #page we need this extra closing tag here -->
 
