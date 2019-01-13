@@ -2,20 +2,36 @@
 
 Things to do:
 
-- ACF for Raati CPT (name, title, phone, mail, image)
-- Raati-member enabled post type for relevant pages
-- Page for showing all board members
+* ~~ACF for Raati CPT (name, title, phone, mail, image)~~
+* ~~Raati-member enabled post type for relevant pages~~
 
-- Check pagination for multipage content
+* Page for showing all board members
+    * Loop trough all raatilainen -post types
 
-- How to show fuksikuvat?
+* Check pagination for multipage content
+    * E.g. kiltajärjestys
 
-- Instagram Feed
-- Calendar Feed
+* Show fuksikuvat?
+    * For each year create separate media folder structure `fuksikuvat/20xx/fuksiryhmän_nimi/fuksin_nimi.jpg`
+    * For each year, a CPT to link media folder 
+    * Templates:
+        * Show n latest years
+        * Archive pages to show older entries
+    * Non-photographed fuksis has to be manually added to folder
 
-- Alert box post type to show notices on front page
+* Instagram Feed
+    * Copy from Chaperon website
 
-- Navbar style
+* Calendar Feed
+    * Has to loop through multiple calendars
+
+* Alert box post type to show notices on front page
+    * Separate CPT
+
+* Navbar style
+    * How to dropdown?
+
+* Multilang?
 
 ## Specs
 
