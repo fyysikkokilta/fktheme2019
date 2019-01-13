@@ -55,7 +55,7 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 	 * Initializes themes widgets.
 	 */
 	function understrap_widgets_init() {
-		register_sidebar( array(
+		/*register_sidebar( array(
 			'name'          => __( 'Right Sidebar', 'understrap' ),
 			'id'            => 'right-sidebar',
 			'description'   => __( 'Right sidebar widget area', 'understrap' ),
@@ -114,6 +114,6 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 		    'before_title'   => '<h3 class="widget-title">', 
 		    'after_title'    => '</h3>', 
 		) );
-
+			*/
 	}
 } // endif function_exists( 'understrap_widgets_init' ).
