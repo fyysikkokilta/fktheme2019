@@ -20,34 +20,62 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 ?>
 
-<div class="wrapper" id="page-wrapper">
+<div class="wrapper-hero" id="page-wrapper">
+	<?php if(has_post_thumbnail($post->ID)): ?>
+	
+	<div class="container-fluid" id="fk-featured-image">
+		<div class="row">
+			<div class="col-12 px-0" id="fk-featured-container">
+				<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+				<div class="fk-overlay"></div>
+
+				<div class="<?php echo esc_attr( $container ); ?>">
+					<div class="row">
+						<div class="col-12">
+							<header class="entry-header header-overlay">
+
+							<h1><?php echo get_the_title($post->ID); ?></h1>
+
+							</header><!-- .entry-header -->
+
+						</div>
+					</div>
+				</div> <!-- Close title container  -->
+
+			</div>
+		</div>
+	</div> <!-- close featured image container -->
+	<?php else: ?> <!-- If there is no  -->
+
+	<div class="<?php echo esc_attr( $container ); ?>">
+		<div class="row">
+			<div class="col-12">
+				<header class="entry-header header-alone">
+
+				<h1><?php echo get_the_title($post->ID); ?></h1>
+
+				</header><!-- .entry-header -->
+
+			</div>
+		</div>
+	</div> <!-- Close title container  -->
+
+	<?php endif ?>
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
 		<div class="row">
 
-			<!-- Do the left sidebar check -->
-			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
-
 			<main class="site-main" id="main">
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'loop-templates/content', 'page' ); ?>
+					<?php get_template_part( 'loop-templates/content', 'fk-page' ); ?>
 
-					<?php
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-					?>
 
 				<?php endwhile; // end of the loop. ?>
 
 			</main><!-- #main -->
-
-		<!-- Do the right sidebar check -->
-		<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
 
 	</div><!-- .row -->
 
