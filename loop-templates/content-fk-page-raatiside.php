@@ -42,7 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	?>
 
 	<div class="fk-board">
-		<img src="<?php the_field("raati_kuva", $raati_ID) ?>" alt="">
+		<img src="<?php the_field("raati_kuva", $raati_ID) ?>" class="rounded-circle" alt="<?php the_field("raati_virka", $raati_ID); ?>">
 		<p>
 			<b><?php the_field("raati_virka", $raati_ID); ?></b> <br>
 			<?php the_field("raati_nimi", $raati_ID); ?> <br>
