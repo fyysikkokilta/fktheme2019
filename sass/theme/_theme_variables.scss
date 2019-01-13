@@ -68,6 +68,6 @@ h1, h2, h3, h4, h5, h6,
  
 $link-color:                $orange;
 $link-font-weight:          700;
-$link-decoration:           none !default;
+$link-decoration:           none;
 $link-hover-color:          darken($link-color, 15%);
-$link-hover-decoration:     underline !default;
+$link-hover-decoration:     underline;

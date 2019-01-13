@@ -4,6 +4,10 @@ a {
     font-weight: $link-font-weight
 }
 
+hr {
+    border-color: white;
+}
+
 .navbar {
 
     padding: 0.5rem 0;
@@ -24,33 +28,127 @@ a {
     img {
         max-width: 3rem; 
     }
-}
 
-
-.calendar-item {
-    background-color: $dark;
-    width: 100%;
-    padding-bottom: 100%;
-    margin-top: $grid-gutter-width;
-
-    &.tapahtumat {
-        background-color: $event-orange;
-    }
-
-    &.ura {
-        background-color: $event-blue;
-    }
-
-    &.kokoukset {
-        background-color: $event-yellow;
-    }
-
-    &.kulttuuri {
-        background-color: $event-techred;
-    }
-
-    &.liikunta {
-        background-color: $event-green;
+    ul {
+        a {
+            text-transform: uppercase;
+        }
     }
 }
 
+#fk-front-image {
+    img {
+        width: 100%;
+        max-height: 90vh;
+        object-fit: cover;
+    }
+}
+
+#fk-calendar {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    .calendar-item {
+        background-color: $dark;
+        width: 100%;
+        padding-bottom: 100%;
+        margin-top: $grid-gutter-width;
+
+        &.tapahtumat {
+            background-color: $event-orange;
+        }
+
+        &.ura {
+            background-color: $event-blue;
+        }
+
+        &.kokoukset {
+            background-color: $event-yellow;
+        }
+
+        &.kulttuuri {
+            background-color: $event-techred;
+        }
+
+        &.liikunta {
+            background-color: $event-green;
+        }
+    }
+}
+
+#fk-main {
+    padding: 3rem;
+    background: $dark;
+
+    color: white;
+
+    .wp-block-image {
+        img {
+            width: 100%;
+            border-radius: 50%;
+        }
+    }
+}
+
+
+
+#page-wrapper {
+    min-height: 90vh;
+
+    #fk-featured-image {
+        margin-bottom: 3rem;
+
+        #fk-featured-container {
+            position: relative;
+            width: 100%; 
+
+            img {
+                width: 100%;
+                max-height: 250px;
+                object-fit: cover;
+            }
+
+            .header-overlay {
+                position: absolute; 
+                bottom: 2rem;
+                
+                h1 {
+                    text-shadow: 2px 2px 4px rgba(251,219,29,0.5);
+                }
+            }
+        }
+    }
+    h1 {
+        color: $dark;
+        font-size: 3rem;
+    }
+
+    .header-alone {
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.fk-overlay {
+        position: absolute;
+        content:"";
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        opacity:0.8;
+        background-color: $yellow;
+}
+
+#page-wrapper {
+    #content {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
+
+#wrapper-footer {
+    background: $dark;
+
+    color: white;
+}

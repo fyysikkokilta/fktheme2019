@@ -30,3 +30,6 @@ Thumbs.db
 .vscode
 
 *.code-workspace
+
+.DS_Store
+sass/.DS_Store
