@@ -31,7 +31,7 @@ Things to do:
 * Navbar style
     * How to dropdown?
 
-* Multilang?
+* ~~Multilang works well~~ 
 
 ## Specs
 
