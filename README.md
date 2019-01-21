@@ -2,16 +2,18 @@
 
 WordPress theme for Fyysikkokilta website. Based on [UnderStrap](https://understrap.com)
 
+The theme is still quite bloated, but looking forward to clean it up prior to installation!
+
 ## Installation & running
 Install theme by cloning it into the wp-content/themes folder and activate it from WP.
 
-## Developing With npm, Gulp and SASS and [Browser Sync]
+## Developing With npm, Gulp and SASS
 
 ### Installing Dependencies
 - Make sure you have installed Node.js and Browser-Sync (optional) on your computer globally
 - Then open your terminal and browse to the location of the theme
 - Run: `$ npm install`
-- This might require python 2
+- This might require python 2, due soma package restrictions
 
 ### Running
 To work with and compile your Sass files on the fly start:
@@ -32,30 +34,20 @@ Or, to run with Browser-Sync:
 ```
 - then run: `$ gulp watch-bs`
 
-## Basic Features
-
-- Combines Underscore’s PHP/JS files and Bootstrap’s HTML/CSS/JS.
-- Comes with Bootstrap (v4) Sass source files and additional .scss files. Nicely sorted and ready to add your own variables and customize the Bootstrap variables.
-- Uses a single minified CSS file for all the basic stuff.
-- [Font Awesome](http://fortawesome.github.io/Font-Awesome/) integration (v4.7.0)
-- Jetpack ready.
-- WooCommerce support.
-- Contact Form 7 support.
-- [Child Theme](https://github.com/holger1411/understrap-child) ready.
-- Translation ready.
 
 ## Confused by All the CSS and Sass Files?
 
 Some basics about the Sass and CSS files that come with UnderStrap:
 - The theme itself uses the `/style.css`file only to identify the theme inside of WordPress. The file is not loaded by the theme and does not include any styles.
-- The `/css/theme.css` and its minified little brother `/css/theme.min.css` file(s) provides all styles. It is composed of five different SCSS sets and one variable file at `/sass/theme.scss`:
+- The `/css/theme.css` and its minified little brother `/css/theme.min.css` file(s) provides all styles. It is composed of five different SCSS sets and one variable file at `/sass/theme.scss`.
 
- ```@import "theme/theme_variables";  // 1. Add your variables into this file. Also add variables to overwrite Bootstrap or UnderStrap variables here
- @import "../src/bootstrap-sass/assets/stylesheets/bootstrap";  // 2. All the Bootstrap stuff - Don´t edit this!
- @import "understrap/understrap"; // 3. Some basic WordPress stylings and needed styles to combine Boostrap and Underscores
- @import "../src/fontawesome/scss/font-awesome"; // 4. Font Awesome Icon styles
+ ```
+ '@import "theme/theme_variables";   1. Add your variables into this file. Also add variables to overwrite Bootstrap or UnderStrap variables here
+ '@import "../src/bootstrap-sass/assets/stylesheets/bootstrap";  // 2. All the Bootstrap stuff - Don´t edit this!
+ '@import "understrap/understrap"; // 3. Some basic WordPress stylings and needed styles to combine Boostrap and Underscores
+ '@import "../src/fontawesome/scss/font-awesome"; // 4. Font Awesome Icon styles
  // Any additional imported files //
- @import "theme/theme";  // 5. Add your styles into this file
+ '@import "theme/theme";  // 5. Add your styles into this file
  ```
 
 - Don’t edit the number 2-4 files/filesets listed above or you won’t be able to update Understrap without overwriting your own work!
@@ -63,14 +55,6 @@ Some basics about the Sass and CSS files that come with UnderStrap:
   - Add your styles to the `/sass/theme/_theme.scss` file 
   - And your variables to the `/sass/theme/_theme_variables.scss`
   - Or add other .scss files into it and `@import` it into `/sass/theme/_theme.scss`.
-
-
-## How to Use the Built-In Widget Slider
-
-The front-page slider is widget driven. Simply add more than one widget to widget position “Hero”.
-- Click on Appearance → Widgets.
-- Add two, or more, widgets of any kind to widget area “Hero”.
-- That’s it.
 
 ## Page Templates
 UnderStrap includes several different page template files: (1) blank template, (2) empty template, and (3) full width template.
