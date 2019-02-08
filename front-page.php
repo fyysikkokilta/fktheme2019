@@ -38,6 +38,24 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 	<section class="<?php echo esc_attr( $container ); ?>"  id="fk-calendar">
 
+	<?php 
+		include "php/gcal-puller.php";
+		$events = getGcalEvents(); 
+
+		if (empty($events)) {
+			print "No upcoming events found.\n";
+		} else {
+			print "Upcoming events:\n";
+			foreach ($events as $event) {
+				$start = $event->start->dateTime;
+				if (empty($start)) {
+					$start = $event->start->date;
+				}
+				printf("%s (%s) ((%s))\n", $event->getSummary(), $start, $event->calname);
+			}
+		}
+	?>
+
 				<div class="row">
 					<div class="col"><div class="calendar-item tapahtumat"></div></div>
 					<div class="col"><div class="calendar-item ura"></div></div>
