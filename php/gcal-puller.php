@@ -61,19 +61,24 @@ function getClient()
     return $client;
 }
 
-function getGcalEvents() {
-    // Get the API client and construct the service object.
-    $client = getClient();
-    $service = new Google_Service_Calendar($client);
+function fk_cal_fetchEvents($transient_name) {
+    /**
+     * Fetches events from Google Calendar API
+     * 
+     * Inputs a name for to-be-saved transient
+     * Returns events as an object
+     */
 
-    //$time_client = microtime(true);
+    // Get the API client and construct the service object.
+    $client = fk_cal_getClient();
+    $service = new Google_Service_Calendar($client);
 
     // All availavle calendars
     // Should this be moved to WP plugin or something?
     $calendars = [
         "tapahtumat"=> "ahe0vjbi6j16p25rcftgfou5eg@group.calendar.google.com",
         "kokoukset"=> "guqva296aoq695aqgq68ak7lkc@group.calendar.google.com",
-        "fuksit"=> "u6eju2k63ond2fs7fqvjbna50c@group.calendar.google.com",
+        //"fuksit"=> "u6eju2k63ond2fs7fqvjbna50c@group.calendar.google.com",
         "kulttuuri"=> "hjhvblcv9n1ue3tf29j3loqqi4@group.calendar.google.com",
         "liikunta"=> "0orqvov2gidl3m24cnsq4ml1ao@group.calendar.google.com",
         "ura"=> "ji339ebgiaauv5nk07g41o65q8@group.calendar.google.com"
@@ -95,10 +100,10 @@ function getGcalEvents() {
         return $dt;
     }
 
+    // For each calendar, fetch upcoming events
     $events = [];
     foreach ($calendars as $name => $id) {
         $results = $service->events->listEvents($id, $optParams);
-        //printf("%s\n", $name);
         $calEvent = $results->getItems();
         foreach($calEvent as $event) {
             $event->{"calname"} = $name;
@@ -106,9 +111,6 @@ function getGcalEvents() {
             array_push($events, $event);
         }
     }
-
-    //$time_fetch = microtime(true);
-
 
     // Sorts things into order
     usort($events, function($a, $b) {
@@ -122,14 +124,17 @@ function getGcalEvents() {
         return $ad < $bd ? -1 : 1;
     });
 
-    /*
-    $time_sort = microtime(true);
-    $time1 = ($time_client - $time_start)/60;
-    $time2 = ($time_fetch - $time_client)/60;
-    $time3 = ($time_sort - $time_fetch)/60;
-    echo $time1 . "\n";
-    echo $time2 . "\n";
-    echo $time3 . "\n";
+    /**
+     * Here we write the events into database as well
+     */
+
+    $transient_expiration = 2*60*60; // This equals to two hours #TODO
+
+    set_transient($transient_name, $events, $transient_expiration);
+
+    return $events;
+}
+
     */
 
     $events = fk_cal_getEvents(); 
