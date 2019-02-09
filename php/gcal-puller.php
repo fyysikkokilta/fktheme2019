@@ -1,18 +1,12 @@
 <?php
 require __DIR__ . '/google-cal-api/vendor/autoload.php';
 
-/*if (php_sapi_name() != 'cli') {
-    throw new Exception('This application must be run on the command line.');
-}*/
-
-//$time_start = microtime(true); 
-
-/**
- * Returns an authorized API client.
- * @return Google_Client the authorized client object
- */
-function getClient()
+function fk_cal_getClient()
 {
+    /**
+     * Returns an authorized API client.
+     * @return Google_Client the authorized client object
+     */
 
     $client = new Google_Client();
     $client->setApplicationName('Fyysikkokilta WEB');
@@ -135,7 +129,51 @@ function fk_cal_fetchEvents($transient_name) {
     return $events;
 }
 
-    */
+
+function fk_cal_getEvents() 
+{
+    /**
+     * Returns event object either from database or (if )
+     */
+
+    $transient_name =  "fk_cal_data";
+
+    $events = get_transient($transient_name);
+    if ($events === false) {
+        $events = fk_cal_fetchEvents($transient_name);
+    }
+    return $events;
+
+}
+
+function fk_cal_getEventIcon($event_type) {
+    $randint = rand(0,2);
+    $icons = [];
+    switch($event_type):
+        case "tapahtumat":
+            $icons = ["fas fa-glass-cheers", "fas fa-hot-tub", "fas fa-glass-cheers"];
+            break;
+        case "kokoukset":
+            $icons = ["fas fa-gavel", "fas fa-stamp", "fas fa-gavel"];
+            break;
+        case "kulttuuri":
+            $icons = ["fas fa-theater-masks", "fas fa-film", "fas fa-theater-masks"];
+            break;
+        case "liikunta":
+            $icons = ["fas fa-quidditch", "fas fa-skiing-nordic", "fas fa-dumbbell"];
+            break;
+        case "ura":
+            $icons = ["fas fa-chart-line", "fas fa-industry", "fas fa-briefcase"];
+            break;
+    endswitch;
+
+    return $icons[$randint];
+}
+
+function fk_cal_printEvents($event_count) {
+/**
+ * Prints events for frontpage
+ */
 
     $events = fk_cal_getEvents(); 
 
@@ -152,7 +190,7 @@ function fk_cal_fetchEvents($transient_name) {
                 $event_time = date('j.n. H:i', $event->start->dateInt);
             } else {
                 $event_time = date('j.n.', $event->start->dateInt);
-        }
+            }
 
             $event_title = $event->getSummary();
         
@@ -161,7 +199,7 @@ function fk_cal_fetchEvents($transient_name) {
 
             echo '<div class="col-md-3"><div class="calendar-item ' . $event_type .'">' . $event_icon .'<h5>' . $event_title . '</h4><p>' . $event_time .'</p></div></div>';
 
-    }
+        }
 
     }
 }
