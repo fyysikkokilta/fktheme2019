@@ -122,9 +122,9 @@ function fk_cal_fetchEvents($transient_name) {
      * Here we write the events into database as well
      */
 
-    $transient_expiration = 2*60*60; // This equals to two hours #TODO
+    $cache_time = 2*60*60; // This equals to two hours #TODO
 
-    set_transient($transient_name, $events, $transient_expiration);
+    set_transient($transient_name, $events, $cache_time);
 
     return $events;
 }
