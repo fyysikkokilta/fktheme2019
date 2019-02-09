@@ -70,17 +70,19 @@ $container   = get_theme_mod( 'understrap_container_type' );
 	</section> <!-- fk-main container end -->
 
 	<section class="container" id="fk-ig-feed" tabindex="-1">
+		<div class="row" id="fk-ig">
 
-		<div class="row" id="fk-calendar">
-			<div class="col"><div class="calendar-item tapahtumat"></div></div>
-			<div class="col"><div class="calendar-item tapahtumat"></div></div>
-			<div class="col"><div class="calendar-item tapahtumat"></div></div>
-			<div class="col"><div class="calendar-item tapahtumat"></div></div>
-			<div class="w-100"></div>
-			<div class="col"><div class="calendar-item tapahtumat"></div></div>
-			<div class="col"><div class="calendar-item tapahtumat"></div></div>
-			<div class="col"><div class="calendar-item tapahtumat"></div></div>
-			<div class="col"><div class="calendar-item tapahtumat"></div></div>
+		<?php
+			include_once 'php/ig-puller.php';
+			$feed = fk_ig_getFeed(8);
+			//print_r($feed);
+
+			for($i = 0; $i < min(8, count($feed)); $i++) {
+				$ig_post = $feed[$i];
+				$thumb_url = $ig_post->images->standard_resolution->url;
+				echo '<div class="col-md-3"><div class="ig-item"><img src="'. $thumb_url .'"></div></div>';
+			}
+		?>
 		</div>
 	</section><!-- Container end -->
 
