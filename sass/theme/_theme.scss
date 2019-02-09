@@ -95,7 +95,7 @@ hr {
             min-height: 100px;
             margin-top: 10px;
             padding: 25px;
-            
+
             i {
                 width: 90px;
             }
@@ -135,6 +135,20 @@ hr {
         &.liikunta {
             background-color: $event-green;
         }
+    }
+}
+
+#fk-ig {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    .ig-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        
+        height: 255px;
     }
 }
 
