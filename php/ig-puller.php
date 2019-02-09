@@ -4,9 +4,11 @@
  */
 
 function fk_ig_getFeed($count) {
-    $cache_time = 2*60*60;
+    
+
+    $cache_time = fk_get_theme_option( 'cache_timeout' );
     $transient_name = "fk_ig_data";
-    $access_token = '';
+    $access_token = fk_get_theme_option( 'ig_token' );
 
     $feed = ''; 
     if( false === ($feed = get_transient($transient_name))) {

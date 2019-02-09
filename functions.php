@@ -38,6 +38,7 @@ $fk_includes = array(						// Separating this from understrap only to make this 
 	'/fk-customizer.php', 					// Load own customizer content
 	'/fk-widgets.php',						// Load own widget preferences
 	'/fk-custom-post.php',					// Load own custom post types
+	'/fk-settings-page.php',				// Create own settings page
 );
 
 foreach ( $fk_includes as $file ) {
