@@ -4,9 +4,10 @@
 //@import "understrap/woocommerce";// <-------- Loads WooCommerce style fixes. Comment out if you aren't using WooCommerce
 
 //Optional files - If you dont use the corresponding scripts/fonts comment em out
-//@import "assets/font-awesome"; // <------- Font Awesome Icon font
+@import "assets/fontawesome"; // <------- Font Awesome Icon font
+      
 @import "assets/underscores"; // <------- Underscores media styles
-
+  
 // Any additional imported files //
 @import "theme/theme";  // <--------- That's where you can add your own design. Thats your part!
 //@import "theme/contact-form7"; // Contact Form 7 - Bootstrap 4 support
