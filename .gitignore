@@ -32,7 +32,7 @@ Thumbs.db
 *.code-workspace
 
 .DS_Store
-sass/.DS_Store
+**/.DS_Store
 
 credentials.json
 token.json
