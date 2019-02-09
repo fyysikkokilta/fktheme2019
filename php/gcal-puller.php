@@ -132,20 +132,31 @@ function getGcalEvents() {
     echo $time3 . "\n";
     */
 
-    /*
-    if (empty($events)) {
-        print "No upcoming events found.\n";
-    } else {
-        print "Upcoming events:\n";
-        foreach ($events as $event) {
-            $start = $event->start->dateTime;
-            if (empty($start)) {
-                $start = $event->start->date;
-            }
-            printf("%s (%s) ((%s))\n", $event->getSummary(), $start, $event->calname);
-        }
-    }
-    */
+    $events = fk_cal_getEvents(); 
 
-    return $events;
+    if (empty($events)) {
+        echo '<div class="error"> No upcoming events found. </div>';
+    } else {
+
+        for($i = 0; $i < min($event_count, count($events)); $i++) {
+            $event = $events[$i];
+
+            //$event_time = date("j.n. H:i", $event->start->dateInt);
+
+            if(!empty($event->start->dateTime)) {
+                $event_time = date('j.n. H:i', $event->start->dateInt);
+            } else {
+                $event_time = date('j.n.', $event->start->dateInt);
+        }
+
+            $event_title = $event->getSummary();
+        
+            $event_type = $event->calname;
+            $event_icon = '<i class="' . fk_cal_getEventIcon($event_type) . '"></i>';
+
+            echo '<div class="col-md-3"><div class="calendar-item ' . $event_type .'">' . $event_icon .'<h5>' . $event_title . '</h4><p>' . $event_time .'</p></div></div>';
+
+    }
+
+    }
 }
