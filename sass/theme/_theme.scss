@@ -53,7 +53,6 @@ hr {
     .calendar-item {
 
         text-align: center;
-
         -webkit-hyphens: auto;
         -ms-hyphens: auto;
         hyphens: auto;
@@ -63,14 +62,9 @@ hr {
         justify-content: center;
         flex-wrap: wrap;
 
-        padding: 25px 10px;
-
-        background-color: $dark;
+        //background-color: $dark;
         width: 100%;
         margin-top: $grid-gutter-width;
-
-        font-size: 1.2rem;
-
 
         i {
             width: 100%;
@@ -84,6 +78,7 @@ hr {
         }
 
         p {
+            font-size: 1.2rem;
             width: 100%;
             color: white;
             margin-bottom: 0.5rem;
@@ -100,16 +95,28 @@ hr {
                 width: 90px;
             }
             p {
+                font-size: 1.1rem;
                 width: auto;
                 margin-left: auto;
                 margin-right: 0;
             }
          }
         //@include media-breakpoint-up(sm) { }
-        @include media-breakpoint-up(md) { 
+        @include media-breakpoint-only(md) { 
+            padding: 15px 7px;
             height: 150px;
+            font-size: 1rem;
+
+            i { 
+                font-size: 2.3rem;
+            }
+            h5 {
+                margin-top: 5px;
+                font-size: 1rem;
+            }
         }
         @include media-breakpoint-up(lg) { 
+            padding: 25px 10px;
             height: 210px;
         }
         @include media-breakpoint-up(xl) { 
@@ -142,13 +149,61 @@ hr {
     margin-top: 3rem;
     margin-bottom: 3rem;
 
+    
+
+    .ig-wrap {
+        @include media-breakpoint-down(sm) { 
+            display: none;
+            &:nth-child(-n+4){
+                display:flex;
+            }
+        }
+    }
+
     .ig-item {
+        z-index: 1;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
         
-        height: 255px;
+        margin-top: $grid-gutter-width;
+        //min-height: 255px;
+
+        opacity: 0.95;
+
+        -webkit-transition: all 200ms ease-in;
+        -webkit-transform: scale(1); 
+        -ms-transition: all 200ms ease-in;
+        -ms-transform: scale(1); 
+        -moz-transition: all 200ms ease-in;
+        -moz-transform: scale(1);
+        transition: all 200ms ease-in;
+        transform: scale(1);   
+
+        &:hover {
+            opacity: 1;
+            z-index: 2;
+            -webkit-transition: all 200ms ease-in;
+            -webkit-transform: scale(1.2);
+            -ms-transition: all 200ms ease-in;
+            -ms-transform: scale(1.2);   
+            -moz-transition: all 200ms ease-in;
+            -moz-transform: scale(1.2);
+            transition: all 200ms ease-in;
+            transform: scale(1.2);
+        }
+
+        @include media-breakpoint-only(md) { 
+            height: auto;
+        }
+        @include media-breakpoint-up(lg) { 
+            height: 210px;
+        }
+        @include media-breakpoint-up(xl) { 
+            height: 255px;
+         }
+
     }
 }
 
@@ -227,4 +282,8 @@ hr {
     background: $dark;
 
     color: white;
+
+    .row {
+        text-align: center;
+    }
 }
