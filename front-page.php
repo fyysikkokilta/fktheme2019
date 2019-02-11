@@ -74,14 +74,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 		<?php
 			include_once 'php/ig-puller.php';
-			$feed = fk_ig_getFeed(8);
-			//print_r($feed);
-
-			for($i = 0; $i < min(8, count($feed)); $i++) {
-				$ig_post = $feed[$i];
-				$thumb_url = $ig_post->images->standard_resolution->url;
-				echo '<div class="col-md-3"><div class="ig-item"><img src="'. $thumb_url .'"></div></div>';
-			}
+			fk_ig_printEvents(8);
 		?>
 		</div>
 	</section><!-- Container end -->
