@@ -39,6 +39,7 @@ $fk_includes = array(						// Separating this from understrap only to make this 
 	'/fk-widgets.php',						// Load own widget preferences
 	'/fk-custom-post.php',					// Load own custom post types
 	'/fk-settings-page.php',				// Create own settings page
+	'/fk-custom-fields.php',					// Advanced Custom Fields functions integrated
 );
 
 foreach ( $fk_includes as $file ) {
