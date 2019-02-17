@@ -50,7 +50,25 @@ hr {
     margin-top: 3rem;
     margin-bottom: 3rem;
 
+    .cal-wrap {
+        @include media-breakpoint-down(sm) { 
+            display: none;
+            &:nth-child(-n+4){
+                display:flex;
+            }
+        }
+
+        @include media-breakpoint-only(md) { 
+            display: none;
+            &:nth-child(-n+6){
+                display:flex; 
+            }
+        }
+    }
+
     .calendar-item {
+
+        
 
         text-align: center;
         -webkit-hyphens: auto;
@@ -104,7 +122,7 @@ hr {
         //@include media-breakpoint-up(sm) { }
         @include media-breakpoint-only(md) { 
             padding: 15px 7px;
-            height: 150px;
+            height: 209px; 
             font-size: 1rem;
 
             i { 
@@ -158,6 +176,13 @@ hr {
                 display:flex;
             }
         }
+
+        @include media-breakpoint-only(md) { 
+            display: none;
+            &:nth-child(-n+6){
+                display:flex; 
+    }
+        }
     }
 
     .ig-item {
@@ -169,6 +194,11 @@ hr {
         
         margin-top: $grid-gutter-width;
         //min-height: 255px;
+
+        
+
+        @include media-breakpoint-up(md) { 
+            height: auto;
 
         opacity: 0.95;
 

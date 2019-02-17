@@ -194,9 +194,15 @@ function fk_cal_printEvents($event_count) {
             $event_title = $event->getSummary();
         
             $event_type = $event->calname;
+
             $event_icon = '<i class="' . fk_cal_getEventIcon($event_type) . '"></i>';
 
-            echo '<div class="col-md-3"><div class="calendar-item ' . $event_type .'">' . $event_icon .'<h5>' . $event_title . '</h4><p>' . $event_time .'</p></div></div>';
+            $event_location = $event->location;
+            if(!empty($event_location)) {
+                $event_location = explode(',', $event_location)[0];
+            }
+
+            echo '<div class="col-md-4 col-lg-3 cal-wrap"><div class="calendar-item ' . $event_type .'">' . $event_icon .'<a href="' . $event->htmlLink . '" target="_blank"><h5>' . $event_title . '</h5></a><p>' . $event_location . '</p><p>' . $event_time .'</p></div></div>';
 
         }
 
