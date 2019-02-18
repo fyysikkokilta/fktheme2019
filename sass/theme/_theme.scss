@@ -105,7 +105,10 @@ hr {
             font-size: 1.2rem;
             width: 100%;
             color: white;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0rem;
+            &.cal_location {
+                font-size: 0.9rem;
+            } 
         }
         
         @include media-breakpoint-down(sm) { 

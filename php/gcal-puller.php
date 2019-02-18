@@ -202,7 +202,7 @@ function fk_cal_printEvents($event_count) {
                 $event_location = explode(',', $event_location)[0];
             }
 
-            echo '<div class="col-md-4 col-lg-3 cal-wrap"><div class="calendar-item ' . $event_type .'">' . $event_icon .'<a href="' . $event->htmlLink . '" target="_blank"><h5>' . $event_title . '</h5></a><p>' . $event_location . '</p><p>' . $event_time .'</p></div></div>';
+            echo '<div class="col-md-4 col-lg-3 cal-wrap"><div class="calendar-item ' . $event_type .'">' . $event_icon .'<a href="' . $event->htmlLink . '" target="_blank"><h5>' . $event_title . '</h5></a><p class="cal_location">' . $event_location . '</p><p class="cal_time">' . $event_time .'</p></div></div>';
 
         }
 
