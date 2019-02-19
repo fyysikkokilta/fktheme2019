@@ -312,3 +312,15 @@ hr {
         text-align: center;
     }
 }
+
+
+.simcal-calendar {
+    ul {
+        li {
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
+        }
+    }
+}
+
