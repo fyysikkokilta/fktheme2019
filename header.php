@@ -61,7 +61,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 					} ?><!-- end custom logo -->
 
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
-					<span class="navbar-toggler-icon"></span>
+					<!-- <span class="navbar-toggler-icon"></span> -->
+					<i class="fas fa-bars"></i>
 				</button>
 
 				<!-- The WordPress Menu goes here -->
@@ -73,8 +74,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 						'menu_class'      => 'navbar-nav ml-auto',
 						'fallback_cb'     => '',
 						'menu_id'         => 'main-menu',
-						'depth'           => 2,
-						'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+						'depth'           => 3,
+						//'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
 					)
 				); ?>
 			<?php if ( 'container' == $container ) : ?>

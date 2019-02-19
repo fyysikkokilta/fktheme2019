@@ -14,6 +14,11 @@ hr {
 
     padding: 0.5rem 0;
 
+    // .container {
+    //     justify-content: flex-start;
+    //     align-items: flex-start;
+    // }
+
     .navbar-brand {
         padding: 0;
     }
@@ -29,6 +34,49 @@ hr {
 
     img {
         max-width: 3rem; 
+    }
+
+    .navbar-toggler {
+        color: white;
+        border: none;
+        font-size: 1.4rem;
+    }
+
+    #navbarNavDropdown {
+        a {
+            color: white;
+        }
+
+        .navbar-nav {
+            padding-top: 25px;
+            padding-bottom: 25px;
+
+            @include media-breakpoint-up(md) { 
+                padding-top: 0px;
+                padding-bottom: 0px;
+            }
+        }
+
+        ul {
+            padding-left: 25px;
+            font-size: 1.1rem;
+
+            li { // main menu
+                padding-left: 0px;
+
+                @include media-breakpoint-up(md) {
+                    padding-left: 10px; 
+                }
+
+                ul {
+                    
+                    @include media-breakpoint-up(md) { 
+                        display: none;
+                    }
+                    font-size: 0.9rem;
+                }
+            }
+        }
     }
 
     ul {
