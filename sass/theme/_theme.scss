@@ -12,7 +12,11 @@ hr {
 
 .navbar {
 
-    padding: 0.5rem 0;
+    //padding: 0.5rem 0;
+    padding: 0;
+    @include media-breakpoint-up(md) {
+        height: 3rem;
+    }
 
     // .container {
     //     justify-content: flex-start;
@@ -21,6 +25,7 @@ hr {
 
     .navbar-brand {
         padding: 0;
+        //margin: 0.5rem;
     }
 
     h1 {
@@ -43,8 +48,25 @@ hr {
     }
 
     #navbarNavDropdown {
+
+        @include media-breakpoint-only(xs) {
+            padding-left: 15px;
+        }
+
+        @include media-breakpoint-up(md) {
+            height: 3rem;
+        }
+
         a {
             color: white;
+            opacity: 1;
+            @include transition(opacity .3s ease-in-out);
+
+            &:hover {
+                text-decoration: none;
+                opacity: 0.75;
+                @include transition(opacity .3s ease-in-out);
+            }
         }
 
         .navbar-nav {
@@ -58,22 +80,97 @@ hr {
         }
 
         ul {
-            padding-left: 25px;
-            font-size: 1.1rem;
+            @include media-breakpoint-up(md) {
+                padding-left: 0;
+                height: 100%;
+            }
 
             li { // main menu
+                font-size: 1.1rem;
+    
                 padding-left: 0px;
+                position: relative;
+                list-style-type: none;
+
+                @include media-breakpoint-only(md) {
+                    font-size: 1rem;
+                }
 
                 @include media-breakpoint-up(md) {
-                    padding-left: 10px; 
+                    //display: block;
+                    padding: 2px 5px; 
+                    display: flex;
+                    align-items: center;
+
+                    
+
+                    &:hover > ul,
+                    ul:hover {
+                        visibility: visible;
+                        display: block;
+                        opacity: 1;
+                        filter: alpha(opacity=100);
+                        @include transition(all .15s ease-in-out);
+                    }
                 }
 
                 ul {
-                    
+
                     @include media-breakpoint-up(md) { 
-                        display: none;
+                        //display: none;
+                        visibility: hidden;
+                        opacity: 0;
+                        filter: alpha(opacity=0);
+                        @include transition(all .15s ease-in-out);
+                        background-color: $gray-800;//$fk-dark;
+                        //margin-top: 0.5rem;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        width: 100px;
+                        height: auto;
                     }
-                    font-size: 0.9rem;
+
+                    li {
+                        
+                        font-size: 0.9rem;
+
+                        
+
+                        @include media-breakpoint-up(md) { 
+                            //padding-left: 0;
+                            width: 100%;
+                            font-size: 1rem;
+                            padding: 5px 5px 5px 10px;
+
+                            &.menu-item-has-children {
+                                border-right: 4px solid $gray-700;
+
+                            }
+
+                            &:hover {
+                                background-color: $gray-700;
+                            }
+                        }
+
+                        @include media-breakpoint-only(md) {
+                            font-size: 0.9rem;
+                        }
+
+                        ul {
+
+                            @include media-breakpoint-up(md) { 
+                                top: 0;
+                                left: calc(100% + 4px);
+                            }
+
+                            li {
+
+                            }
+                        }
+
+                    }
+                    
                 }
             }
         }
