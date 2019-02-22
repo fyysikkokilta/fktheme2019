@@ -4,7 +4,8 @@
     function display_raati_members(){
         $args = array(
             'post_type' => 'raatilaiset',
-            'post_status' => 'publish'
+            'post_status' => 'publish',
+            'posts_per_page' => '15',
         );
 
         $string = '';
