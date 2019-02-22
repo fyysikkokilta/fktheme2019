@@ -22,6 +22,6 @@ function fk_custom_post_types() {
     'public' => true,
     'menu_position' => 20,
     'menu_icon'           => 'dashicons-groups',
-    'supports' => array( 'title', 'editor', 'custom-fields' )
+    'supports' => array( 'title', 'editor', 'custom-fields', 'page-attributes')
     ));
 }

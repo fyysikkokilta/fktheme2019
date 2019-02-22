@@ -6,6 +6,8 @@
             'post_type' => 'raatilaiset',
             'post_status' => 'publish',
             'posts_per_page' => '15',
+            'order' => 'ASC',
+            'orderby' => 'menu_order',
         );
 
         $string = '';
