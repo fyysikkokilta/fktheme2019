@@ -41,6 +41,7 @@ $fk_includes = array(						// Separating this from understrap only to make this 
 	'/fk-settings-page.php',				// Create own settings page
 	'/fk-custom-fields.php',				// Advanced Custom Fields functions integrated
 	'/fk-raati-shortcode.php',				// Display raatilaiset on a page using a shortcode
+	'/fk-fuksikuva-shortcode.php',			// Display fuksikuvat on a page using a shortcode
 );
 
 foreach ( $fk_includes as $file ) {
