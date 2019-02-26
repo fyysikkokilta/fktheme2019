@@ -1,7 +1,7 @@
 <?php
-    add_shortcode( 'fk_raati', 'display_raati_members' );
+    add_shortcode( 'fk_raati', 'fk_display_raati_members' );
 
-    function display_raati_members(){
+    function fk_display_raati_members(){
         $args = array(
             'post_type' => 'raatilaiset',
             'post_status' => 'publish',
