@@ -18,7 +18,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 	
 	<div class="<?php echo esc_attr( $container ); ?>">
 
-		<?php if(is_front_page()) { ?> <!-- Show partners only on frontpage -->
+		<?php if(is_front_page() && is_active_sidebar( 'fk-partner-widgets' ) ) { ?> <!-- Show partners only on frontpage -->
+		
+		<div class="row">
+			<div class="col text-center fk-partner-title">
+				<h2>
+				Partners
+				</h2>
+			</div>
+		</div>
 
 		<div class="row">
 
