@@ -60,6 +60,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 						<?php
 					} ?><!-- end custom logo -->
 
+
+				<?php
+					if ( function_exists ( 'wpm_language_switcher' ) ) {
+						 wpm_language_switcher ('list', 'name');
+					}
+				?>
+
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
 					<!-- <span class="navbar-toggler-icon"></span> -->
 					<i class="fas fa-bars"></i>

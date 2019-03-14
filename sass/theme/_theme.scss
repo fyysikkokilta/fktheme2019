@@ -47,6 +47,23 @@ hr {
         font-size: 1.4rem;
     }
 
+    .wpm-language-switcher {
+        color: white;
+
+        a {
+            color: white;
+        }
+
+        li {
+            float: left;
+            margin-right: 4px;
+
+            &.active>span {
+                display: none;
+            }
+        }
+    }
+
     #navbarNavDropdown {
 
         @include media-breakpoint-only(xs) {
