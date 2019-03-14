@@ -52,6 +52,16 @@ hr {
 
         a {
             color: white;
+            opacity: 1;
+            @include transition(opacity .3s ease-in-out);
+
+            &:hover {
+                color: white;
+                text-decoration: none;
+                opacity: 0.75;
+                @include transition(opacity .3s ease-in-out);
+            }
+
         }
 
         li {
