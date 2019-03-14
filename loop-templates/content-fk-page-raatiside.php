@@ -1,6 +1,6 @@
 <?php
 /**
- * Partial template for content in front-page.php
+ * Partial template for content in page-raatiside.php
  *
  * @package understrap
  */
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
+			'before' => '<div class="page-links">' . __( 'Sivut:', 'understrap' ),
 			'after'  => '</div>',
 		) );
 		?>
