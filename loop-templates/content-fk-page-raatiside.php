@@ -11,9 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 
-
-
-<article class="col-md-8 order-md-4" <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<article class="col-md-8 order-md-2" <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 	<div class="entry-content">
 

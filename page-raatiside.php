@@ -33,7 +33,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 				<div class="<?php echo esc_attr( $container ); ?>">
 					<div class="row">
-						<div class="col-12">
+						<div class="md-col-9 offset-md-3 ">
 							<header class="entry-header header-overlay">
 
 							<h1><?php echo get_the_title($post->ID); ?></h1>
@@ -51,7 +51,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 	<div class="<?php echo esc_attr( $container ); ?>">
 		<div class="row">
-			<div class="col-12">
+			<div class="md-col-8 md-offset-3">
 				<header class="entry-header header-alone">
 
 				<h1><?php echo get_the_title($post->ID); ?></h1>
