@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 
-<article class="col-md-8 order-md-5" <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<article class="col-md-8 order-md-4" <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 	<div class="entry-content">
 
@@ -36,18 +36,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 </article><!-- #post-## -->
 
-<aside class="col-md-4 order-md-1 text-center">
+<aside class="col-md-3 col-sm-6 order-md-1 text-center">
 	<?php 
 		$raati_ID = get_field("fk_raatilainen"); 
 	?>
 
-	<div class="fk-board">
+	<div class="fk-raati-side">
 		<img src="<?php the_field("raati_kuva", $raati_ID) ?>" class="rounded-circle" alt="<?php the_field("raati_virka", $raati_ID); ?>">
+		<?php echo (get_field("raati_virka", $raati_ID)  ? ('<h5 class="fk-raati-virka text-center">' . get_field("raati_virka", $raati_ID) . '</h5>') : ''); ?>
 		<p>
-			<b><?php the_field("raati_virka", $raati_ID); ?></b> <br>
-			<?php the_field("raati_nimi", $raati_ID); ?> <br>
-			<?php the_field("raati_mail", $raati_ID); ?> <br>
-			<?php the_field("raati_puhelin", $raati_ID); ?>
+			<?php echo (get_field("raati_nimi", $raati_ID) ? ('<span class="fk-raati-nimi">' . get_field("raati_nimi", $raati_ID) . '</span><br>') : ''); ?>
+			<?php echo (get_field("raati_mail", $raati_ID) ? ('<a href="mailto:' . get_field("raati_mail", $raati_ID) . '" target="_top"> <span class="fk-raati-mail">' . get_field("raati_mail", $raati_ID) . '</span></a><br>') : ''); ?>
+			<?php echo (get_field("raati_tg", $raati_ID) ? ('<span class="fk-raati-tg">' . get_field("raati_tg", $raati_ID) . '</span> &vert;') : ''); ?>
+			<?php echo (get_field("raati_puhelin", $raati_ID) ? ('<span class="fk-raati-puhelin">' . get_field("raati_puhelin", $raati_ID) . '</span><br>') : ''); ?>
 		</p>
 	</div>
 </aside>
