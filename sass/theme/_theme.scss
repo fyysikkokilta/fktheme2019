@@ -469,6 +469,19 @@ hr {
     }
 }
 
+.fk-raatilista {
+    h5 {
+        margin-top: 0.8rem;
+    }
+
+    .fk-raati-nimi {
+        font-size: 1.1rem;
+    }
+
+    .fk-raati-mail, .fk-raati-tg, .fk-raati-puhelin {
+        font-size: 0.9rem;
+    } 
+}
 
 .simcal-calendar {
     ul {

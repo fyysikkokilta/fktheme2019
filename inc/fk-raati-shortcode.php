@@ -19,10 +19,11 @@
                 if(get_field('raati_yesno') == True ) {
                     $string .= '<div class="col-6 col-md-4 col-lg-3 fk-raatilainen">';
                     $string .= '<img src="' . get_field("raati_kuva") . '" class="rounded-circle" alt="' . get_field("raati_virka") . '">';
-                    $string .= '<p class="text-center">' . (get_field("raati_virka")  ? ('<span class="fk-raati-virka">' . get_field("raati_virka") . '</span><br>') : '');
-                    $string .= (get_field("raati_nimi") ? ('<span class="fk-raati-nimi">' . get_field("raati_nimi") . '</span><br>') : '');
-                    $string .= (get_field("raati_mail") ? ('<span class="fk-raati-mail">' . get_field("raati_mail") . '</span><br>') : '');
-                    $string .= (get_field("raati_puhelin") ? ('<span class="fk-raati-puhelin">' . get_field("raati_puhelin") . '</span>') : '') . '</p>';
+                    $string .= (get_field("raati_virka")  ? ('<h5 class="fk-raati-virka text-center">' . get_field("raati_virka") . '</h5>') : '');
+                    $string .= '<p class="text-center">' . (get_field("raati_nimi") ? ('<span class="fk-raati-nimi">' . get_field("raati_nimi") . '</span><br>') : '');
+                    $string .= (get_field("raati_mail") ? ('<a href="mailto:' . get_field("raati_mail") . '" target="_top"> <span class="fk-raati-mail">' . get_field("raati_mail") . '</span></a><br>') : '');
+                    $string .= (get_field("raati_tg") ? ('<span class="fk-raati-tg">' . get_field("raati_tg") . ' &vert; </span>') : '');
+                    $string .= (get_field("raati_puhelin") ? ('<span class="fk-raati-puhelin"> ' . get_field("raati_puhelin") . '</span>') : '') . '</p>';
                     $string .= '</div>';
                 }   
             }
