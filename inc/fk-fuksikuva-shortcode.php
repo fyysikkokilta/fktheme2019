@@ -39,7 +39,7 @@
                         $out .= '<div class="col-md-2 col-sm-3 col-4">';
                         $out .= '<img src="' . $adress . '" class="">';
                         $out .= '<p>' . $nimi . '</p>';
-                        $out .= '</div>';
+                        $out .= '</div>'; 
                     }
                 }
                 $out .= '</div>';
