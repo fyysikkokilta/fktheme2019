@@ -15,7 +15,7 @@
         $transient_name = $folder;
         
         $out = '';
-        //delete_transient( $transient_name );
+        delete_transient( $transient_name );
         if( false === ($out = get_transient($transient_name))) {
             
 
