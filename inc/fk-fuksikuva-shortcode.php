@@ -32,7 +32,7 @@
 
                 $out .= '<div class="row">';
                 foreach($files as $fuksikuva) {
-                    if(substr($fuksikuva, -3) === "jpg" || substr($fuksikuva, -4) === "jpeg" ) {
+                    if( (substr($fuksikuva, -3) === "jpg" || substr($fuksikuva, -4) === "jpeg") && strpos($fuksikuva, '150') !== true ) {
                         $adress = $url . '/' . $folder  . '/' . $ryhma . '/' . $fuksikuva . ' ';
                         $nimi = explode(".", $fuksikuva)[0];
                         $nimi = str_replace("_", " ", $nimi);
