@@ -15,7 +15,7 @@
         $transient_name = $folder;
         
         $out = '';
-
+        //delete_transient( $transient_name );
         if( false === ($out = get_transient($transient_name))) {
             
 
@@ -32,7 +32,7 @@
 
                 $out .= '<div class="row">';
                 foreach($files as $fuksikuva) {
-                    if(substr($fuksikuva, -3) === "jpg" || substr($fuksikuva, -4) === "jpeg" ) {
+                    if( (substr($fuksikuva, -3) === "jpg" || substr($fuksikuva, -4) === "jpeg") && !(strpos($fuksikuva, '150') !== false) ) {
                         $adress = $url . '/' . $folder  . '/' . $ryhma . '/' . $fuksikuva . ' ';
                         $nimi = explode(".", $fuksikuva)[0];
                         $nimi = str_replace("_", " ", $nimi);
@@ -46,7 +46,6 @@
             }
             
             set_transient( $transient_name, $out, 60*60*24*30);
-
         }
         return ($out);
 
