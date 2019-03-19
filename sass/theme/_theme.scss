@@ -18,14 +18,8 @@ hr {
         height: 3rem;
     }
 
-    // .container {
-    //     justify-content: flex-start;
-    //     align-items: flex-start;
-    // }
-
     .navbar-brand {
         padding: 0;
-        //margin: 0.5rem;
     }
 
     h1 {
@@ -61,7 +55,6 @@ hr {
                 opacity: 0.75;
                 @include transition(opacity .3s ease-in-out);
             }
-
         }
 
         li {
@@ -118,6 +111,7 @@ hr {
                 padding-left: 0px;
                 position: relative;
                 list-style-type: none;
+                white-space: nowrap;
 
                 @include media-breakpoint-only(md) {
                     font-size: 1rem;
