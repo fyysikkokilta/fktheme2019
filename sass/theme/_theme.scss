@@ -106,7 +106,7 @@ hr {
             }
 
             li { // main menu
-                font-size: 1.1rem;
+                font-size: 1rem;
     
                 padding-left: 0px;
                 position: relative;
@@ -114,7 +114,7 @@ hr {
                 white-space: nowrap;
 
                 @include media-breakpoint-only(md) {
-                    font-size: 1rem;
+                    font-size: 0.9rem;
                 }
 
                 @include media-breakpoint-up(md) {
