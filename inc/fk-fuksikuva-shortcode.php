@@ -7,8 +7,8 @@
             'title' => 'Fuksit 2018'
         ), $atts );
 
-        $dir = wp_upload_dir()[basedir] . '/fuksikuvat' ;
-        $url = wp_upload_dir()[baseurl] . '/fuksikuvat';
+        $dir = wp_upload_dir()['basedir'] . '/fuksikuvat' ;
+        $url = wp_upload_dir()['baseurl'] . '/fuksikuvat';
         $folder = $a['folder'];
         $title = $a['title'];
 
@@ -26,7 +26,8 @@
 
             foreach ($folder_contents as $idx=>$fuksir) {
                 $files = array_diff(scandir($fuksir), array('..', '.'));
-                $ryhma = end(explode("/", $fuksir));
+                $rr = explode("/", $fuksir);
+                $ryhma = end($rr);
                 
                 $out .= '<div class="row"> <h3>' . str_replace("_", " ", $ryhma) . '</h3></div>'; 
 
