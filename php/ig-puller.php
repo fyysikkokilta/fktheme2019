@@ -28,9 +28,10 @@ function fk_ig_getFeed($count) {
 
 
 function fk_ig_printEvents($count) {
+    echo 'Function is called';
     $feed = fk_ig_getFeed($count);
     //print_r($feed);
-    echo 'Doing stuff';
+    echo 'Function returned';
     if($feed) {
         for($i = 0; $i < min(8, count($feed)); $i++) {
             $ig_post = $feed[$i];
