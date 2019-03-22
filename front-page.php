@@ -73,8 +73,8 @@ $container   = get_theme_mod( 'understrap_container_type' );
 		<div class="row" id="fk-ig">
 
 		<?php
-			include_once 'php/ig-puller.php';
-			fk_ig_printEvents(8);
+			//include_once 'php/ig-puller.php';
+			//fk_ig_printEvents(8);
 		?>
 		</div>
 	</section><!-- Container end -->
