@@ -5,24 +5,31 @@
 
 function fk_ig_getFeed($count) {
 
+    echo 'Into the function';
     $cache_time = fk_get_theme_option( 'cache_timeout' );
     $transient_name = "fk_ig_data";
     $access_token = fk_get_theme_option( 'ig_token' );
 
+    echo 'Options loaded';
     $feed = ''; 
     if( false === ($feed = get_transient($transient_name))) {
+        echo 'No transient found, callong to IG';
         $url  = 'https://api.instagram.com/v1/users/self/media/recent/';
         $url .= '?count=' . $count . '&amp;access_token=' . $access_token;
         
         $response = wp_remote_get($url);
         if($response) {
+            echo 'IG responded';
             $body = json_decode( $response['body'] );
 			$feed = $body->data;
 
 			// Cache the response in your database so that you
-			set_transient( $transient_name, $feed, $cache_time);
+            set_transient( $transient_name, $feed, $cache_time);
+            echo 'Transient settedded';
         }
     }
+
+    echo 'Returning feed';
     return $feed;
 }
 
