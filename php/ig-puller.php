@@ -5,37 +5,36 @@
 
 function fk_ig_getFeed($count) {
 
-    echo 'Into the function';
     $cache_time = fk_get_theme_option( 'cache_timeout' );
     $transient_name = "fk_ig_data";
     $access_token = fk_get_theme_option( 'ig_token' );
 
-    echo 'Options loaded';
+    delete_transient( 'fk_ig_data' );
+
     $feed = ''; 
     if( false === ($feed = get_transient($transient_name))) {
         echo 'No transient found, callong to IG';
         $url  = 'https://api.instagram.com/v1/users/self/media/recent/';
         $url .= '?count=' . $count . '&amp;access_token=' . $access_token;
         
-        $response = wp_remote_get($url);
-        if($response) {
-            echo 'IG responded';
+        $response = wp_remote_get($url, array( 'timeout' => 30, 'httpversion' => '1.1' ));
+        if( is_array($response)) {
+            echo $response['body'];
             $body = json_decode( $response['body'] );
 			$feed = $body->data;
 
 			// Cache the response in your database so that you
             set_transient( $transient_name, $feed, $cache_time);
-            echo 'Transient settedded';
+        } else {
+            echo 'Bad response';
         }
     }
 
-    echo 'Returning feed';
     return $feed;
 }
 
 
 function fk_ig_printEvents($count) {
-    echo 'Function is called';
     $feed = fk_ig_getFeed($count);
     //print_r($feed);
     echo 'Function returned';
