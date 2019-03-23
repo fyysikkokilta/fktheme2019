@@ -38,7 +38,7 @@ function fk_ig_printEvents($count) {
             $ig_post = $feed[$i];
             $thumb_url = $ig_post->images->standard_resolution->url;
             $link = $ig_post->link;
-            echo '<div class="col-6 col-md-4 col-lg-3 ig-wrap"><div class="ig-item"><a href="'. $link .'" target="_blank"><img src="'. $thumb_url .'"></a></div></div>';
+            echo '<div class="col-6 col-md-4 col-lg-3 ig-wrap"><div class="ig-item"><a href="'. $link .'" alt="Instagram" target="_blank"><img src="'. $thumb_url .'" alt="Instagram feed"></a></div></div>';
         }
     }
 }
