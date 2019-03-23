@@ -73,12 +73,16 @@ hr {
             padding-left: 15px;
         }
 
-        max-height: 90vh;
-        overflow: scroll;
+        
+
+        @include media-breakpoint-down(sm) {
+            max-height: 90vh;
+            overflow: scroll;
+        }
 
         @include media-breakpoint-up(md) {
             height: 3rem;
-            overflow: hidden;
+            max-height: auto;
         }
 
         a {
