@@ -59,7 +59,7 @@ function fk_cal_getClient()
     return $client;
 }
 
-function fk_cal_fetchEvents($transient_name) {
+function fk_cal_fetchEvents($transient_name, $event_count) {
     /**
      * Fetches events from Google Calendar API
      * 
@@ -83,7 +83,7 @@ function fk_cal_fetchEvents($transient_name) {
     ];
 
     $optParams = array(
-    'maxResults' => 10,
+    'maxResults' => $event_count,
     'orderBy' => 'startTime',
     'singleEvents' => true,
     'timeMin' => date('c'),
@@ -146,10 +146,10 @@ function fk_cal_fetchEvents($transient_name) {
     });
 
     /**
-     * Take first 10 events, write into transient and return
+     * Take requested number of events events, write into transient and return
      */
 
-    $events_slice = array_slice($events, 0, 10);
+    $events_slice = array_slice($events, 0, $event_count);
 
     $cache_time = fk_get_theme_option( 'cache_timeout' );
     set_transient($transient_name, $events_slice, $cache_time);
@@ -158,7 +158,7 @@ function fk_cal_fetchEvents($transient_name) {
 }
 
 
-function fk_cal_getEvents() 
+function fk_cal_getEvents($event_count) 
 {
     /**
      * Returns event object either from database or (if )
@@ -169,7 +169,7 @@ function fk_cal_getEvents()
 
     $events = get_transient($transient_name);
     if ($events === false) {
-        $events = fk_cal_fetchEvents($transient_name);
+        $events = fk_cal_fetchEvents($transient_name, $event_count);
     }
     return $events;
 
@@ -204,7 +204,7 @@ function fk_cal_printEvents($event_count) {
  * Prints events for frontpage
  */
 
-    $events = fk_cal_getEvents(); 
+    $events = fk_cal_getEvents($event_count); 
 
     if (empty($events)) {
         echo '<div class="error"> No upcoming events found. </div>';
