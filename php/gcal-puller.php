@@ -112,17 +112,28 @@ function fk_cal_fetchEvents($transient_name) {
 
     // For each calendar, fetch upcoming events
     $events = [];
-    foreach ($calendars as $name => $id) {
+    foreach ($calendars as $calname => $id) {
         $results = $service->events->listEvents($id, $optParams);
         $calEvent = $results->getItems();
         foreach($calEvent as $event) {
-            $event->{"calname"} = $name;
+            $event->{"calname"} = $calname;
             $event->start->{"dateInt"} = gcal_datetime_parser($event);
+            $event->start->{"timeString"} = gcal_event_time($event);
+
+            $event_location = '';
+            if(!empty($event->location)) {
+                $event_location = explode(',', $event->location)[0];
+            }
+
+            $event->{"locationString"} = $event_location;
+
+            $event->{"icon"} = fk_cal_getEventIcon($calname);
+
             array_push($events, $event);
         }
     }
 
-    // Sorts things into order
+    // Sorts events into order
     usort($events, function($a, $b) {
         $ad = $a->start->dateInt;
         $bd = $b->start->dateInt;
