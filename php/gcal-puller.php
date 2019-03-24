@@ -4,6 +4,10 @@ require __DIR__ . '/google-cal-api/vendor/autoload.php';
 function fk_cal_getClient()
 {
     /**
+     * This is only used for authorization. It shouldn't happen usually
+     * If calendar puller does not work, then this should somehow be used to generate new api credentials
+     * However, I (Alpi) am not 100% sure how it whould happen :Ds
+     * 
      * Returns an authorized API client.
      * @return Google_Client the authorized client object
      */
@@ -85,13 +89,25 @@ function fk_cal_fetchEvents($transient_name) {
     'timeMin' => date('c'),
     );
 
-    // Returns date or datetime of event as timestring
-    function gcal_datetime_parser($event_object) {
-        $dt = strtotime($event_object->start->dateTime);
+    // Returns date or datetime of event as unix timestring for sorting purposes
+    function gcal_datetime_parser($event) {
+        $dt = strtotime($event->start->dateTime);
         if(empty($dt)) {
-            $dt = strtotime($event_object->start->date);
+            $dt = strtotime($event->start->date);
         }
         return $dt;
+    }
+
+    // Returns date or datetime as formatted string for frontend purposes
+    function gcal_event_time($event) {
+        if(!empty($event->start->dateTime)) {
+            $dt = new DateTime($event->start->dateTime);
+            $timeString = $dt->format('j.n. H:i');
+        } else {
+            $dt = new DateTime($event->start->date);
+            $timeString = $dt->format('j.n.');
+        }   
+        return $timeString;
     }
 
     // For each calendar, fetch upcoming events
