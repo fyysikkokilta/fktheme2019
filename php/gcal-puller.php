@@ -165,6 +165,7 @@ function fk_cal_getEvents()
      */
 
     $transient_name =  "fk_cal_data";
+    //delete_transient($transient_name); // delete transient always for debugging purposes
 
     $events = get_transient($transient_name);
     if ($events === false) {
@@ -209,31 +210,19 @@ function fk_cal_printEvents($event_count) {
         echo '<div class="error"> No upcoming events found. </div>';
     } else {
 
+        $output = '';
         for($i = 0; $i < min($event_count, count($events)); $i++) {
             $event = $events[$i];
 
-            //$event_time = date("j.n. H:i", $event->start->dateInt);
+            $output .= '<div class="col-md-4 col-lg-3 cal-wrap">';
+            $output .= '<div class="calendar-item ' . $event->calname .'">';
+            $output .= '<i class="'  . $event->icon . '"></i><a href="' . $event->htmlLink . '" target="_blank">';
+            $output .= '<h5>' . $event->getSummary() . '</h5></a><p class="cal_location">' . $event->locationString . '</p><p class="cal_time">' . $event->start->timeString .'</p>';
+            $output .= '</div></div>';
 
-            if(!empty($event->start->dateTime)) {
-                $event_time = date('j.n. H:i', $event->start->dateInt);
-            } else {
-                $event_time = date('j.n.', $event->start->dateInt);
             }
 
-            $event_title = $event->getSummary();
-        
-            $event_type = $event->calname;
-
-            $event_icon = '<i class="' . fk_cal_getEventIcon($event_type) . '"></i>';
-
-            $event_location = $event->location;
-            if(!empty($event_location)) {
-                $event_location = explode(',', $event_location)[0];
-            }
-
-            echo '<div class="col-md-4 col-lg-3 cal-wrap"><div class="calendar-item ' . $event_type .'">' . $event_icon .'<a href="' . $event->htmlLink . '" target="_blank"><h5>' . $event_title . '</h5></a><p class="cal_location">' . $event_location . '</p><p class="cal_time">' . $event_time .'</p></div></div>';
-
-        }
+        echo $output;
 
     }
 }
