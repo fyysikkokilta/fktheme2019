@@ -219,8 +219,8 @@ function fk_cal_printEvents($event_count) {
             $output .= '<i class="'  . $event->icon . '"></i><a href="' . $event->htmlLink . '" target="_blank">';
             $output .= '<h5>' . $event->getSummary() . '</h5></a><p class="cal_location">' . $event->locationString . '</p><p class="cal_time">' . $event->start->timeString .'</p>';
             $output .= '</div></div>';
-
-            }
+            
+        }
 
         echo $output;
 
