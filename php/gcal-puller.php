@@ -76,7 +76,7 @@ function fk_cal_fetchEvents($transient_name, $event_count) {
     $calendars = [
         "tapahtumat"=> "ahe0vjbi6j16p25rcftgfou5eg@group.calendar.google.com",
         "kokoukset"=> "guqva296aoq695aqgq68ak7lkc@group.calendar.google.com",
-        //"fuksit"=> "u6eju2k63ond2fs7fqvjbna50c@group.calendar.google.com",
+        "fuksit"=> "u6eju2k63ond2fs7fqvjbna50c@group.calendar.google.com",
         "kulttuuri"=> "hjhvblcv9n1ue3tf29j3loqqi4@group.calendar.google.com",
         "liikunta"=> "0orqvov2gidl3m24cnsq4ml1ao@group.calendar.google.com",
         "ura"=> "ji339ebgiaauv5nk07g41o65q8@group.calendar.google.com"
@@ -180,7 +180,7 @@ function fk_cal_getEventIcon($event_type) {
     $icons = [];
     switch($event_type):
         case "tapahtumat":
-            $icons = ["fas fa-glass-cheers", "fas fa-hot-tub", "fas fa-glass-cheers"];
+            $icons = ["fas fa-glass-cheers", "fas fa-hot-tub", "fas fa-cocktail"];
             break;
         case "kokoukset":
             $icons = ["fas fa-gavel", "fas fa-stamp", "fas fa-gavel"];
@@ -193,6 +193,9 @@ function fk_cal_getEventIcon($event_type) {
             break;
         case "ura":
             $icons = ["fas fa-chart-line", "fas fa-industry", "fas fa-briefcase"];
+            break;
+        case "fuksit":
+            $icons = ["fas fa-child", "fas fa-baby", "fas fa-baby-carriage"];
             break;
     endswitch;
 
