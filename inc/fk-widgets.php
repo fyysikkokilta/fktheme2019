@@ -28,20 +28,17 @@ if ( ! function_exists( 'fk_slbd_count_widgets' ) ) {
 		if ( isset( $sidebars_widgets_count[ $sidebar_id ] ) ) :
 			$widget_count = count( $sidebars_widgets_count[ $sidebar_id ] );
 			$widget_classes = 'widget-count-' . count( $sidebars_widgets_count[ $sidebar_id ] );
-			if ( $widget_count % 4 == 0 || $widget_count > 6 ) :
-				// Four widgets per row if there are exactly four or more than six
-				$widget_classes .= ' col-md-3';
-			elseif ( 6 == $widget_count ) :
-				// If six widgets are published
-				$widget_classes .= ' col-md-2';
+			if ( 4 == $widget_count ) :
+				// If just four widgets, make square of them
+        $widget_classes .= ' col-md-6';
+      elseif ( $widget_count % 4 == 0 || 7 == $widget_count) :
+        // Four widgets per row, if we get full rows that way, or if there are seven widgets, avoid row where there is only one widget
+        $widget_classes .= ' col-md-3';
 			elseif ( $widget_count >= 3 ) :
 				// Three widgets per row if there's three or more widgets 
 				$widget_classes .= ' col-md-4';
-			elseif ( 2 == $widget_count ) :
-				// If two widgets are published
-				$widget_classes .= ' col-md-6';
-			elseif ( 1 == $widget_count ) :
-				// If just on widget is active
+			elseif ( 2 == $widget_count || 1 == $widget_count ) :
+				// If just one or two widgets are published, they take whole row
 				$widget_classes .= ' col-md-12';
 			endif; 
 			return $widget_classes;
