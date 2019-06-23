@@ -541,3 +541,21 @@ hr {
     }
 }
 
+.fk-some-links {
+  i {
+    font-size: 35px;
+    font-style: normal;
+    margin: 3px;
+  }
+
+  a {
+    color: $white;
+
+    &:hover {
+      color: $gray-500;
+      text-decoration: none;
+      @include transition(all .15s ease-in-out);
+    }
+  }
+}
+
