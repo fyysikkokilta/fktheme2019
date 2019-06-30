@@ -380,6 +380,7 @@ hr {
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
+        object-fit: cover;
         
         margin-top: $grid-gutter-width;
         //min-height: 255px;
@@ -403,11 +404,20 @@ hr {
             }
         }
         @include media-breakpoint-up(lg) { 
-            height: 210px;
+            img {
+                height: 210px;
+            }
         }
         @include media-breakpoint-up(xl) { 
-            height: 255px;
-         }
+            img {
+                height: 255px;
+            }
+        }
+
+        img {
+           object-fit: contain;
+        }
+
 
     }
 }
@@ -499,6 +509,7 @@ hr {
     }
 }
 
+
 .fk-raatilista {
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
@@ -516,6 +527,7 @@ hr {
         font-size: 0.9rem;
     } 
 }
+
 
 .fk-raati-side {
     -webkit-hyphens: auto;
@@ -540,6 +552,7 @@ hr {
         }
     }
 }
+
 
 .fk-some-links {
   i {
