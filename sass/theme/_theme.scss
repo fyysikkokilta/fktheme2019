@@ -1,5 +1,17 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
- 
+
+.entry-content {
+    line-height: 1.65rem;
+}
+
+.wp-block-quote {
+  font-family: $font-family-serif;
+}
+
+.collapseomatic {
+  text-decoration: none;
+}
+
 a {
     font-weight: $link-font-weight
 }
@@ -539,7 +551,11 @@ hr {
 
     .fk-raati-mail, .fk-raati-tg, .fk-raati-puhelin {
         font-size: 0.9rem;
-    } 
+    }
+
+    h5 {
+        margin-top: 0.5rem;
+    }
 }
 
 .simcal-calendar {
