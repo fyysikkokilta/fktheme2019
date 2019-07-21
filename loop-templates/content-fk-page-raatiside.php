@@ -44,8 +44,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php echo (get_field("raati_virka", $raati_ID)  ? ('<h5 class="fk-raati-virka text-center">' . get_field("raati_virka", $raati_ID) . '</h5>') : ''); ?>
 		<p>
 			<?php echo (get_field("raati_nimi", $raati_ID) ? ('<span class="fk-raati-nimi">' . get_field("raati_nimi", $raati_ID) . '</span><br>') : ''); ?>
-			<?php echo (get_field("raati_mail", $raati_ID) ? ('<a href="mailto:' . get_field("raati_mail", $raati_ID) . '" target="_top"> <span class="fk-raati-mail">' . get_field("raati_mail", $raati_ID) . '</span></a><br>') : ''); ?>
-			<?php echo (get_field("raati_tg", $raati_ID) ? ('<span class="fk-raati-tg">' . get_field("raati_tg", $raati_ID) . '</span> &vert;') : ''); ?>
+			<?php echo (get_field("raati_mail", $raati_ID) ? ('<a href="mailto:' . get_field("raati_mail", $raati_ID) . '" target="_blank"> <span class="fk-raati-mail">' . get_field("raati_mail", $raati_ID) . '</span></a><br>') : ''); ?>
+			<?php echo (get_field("raati_tg", $raati_ID) ? ('<a href="https:/t.me/' . substr(get_field("raati_tg", $raati_ID), 1) . '" target="_blank"> <span class="fk-raati-tg">' . get_field("raati_tg", $raati_ID) . '</span></a> &vert;') : ''); ?>
 			<?php echo (get_field("raati_puhelin", $raati_ID) ? ('<span class="fk-raati-puhelin">' . get_field("raati_puhelin", $raati_ID) . '</span><br>') : ''); ?>
 		</p>
 	</div>
