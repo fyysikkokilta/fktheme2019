@@ -591,3 +591,20 @@ hr {
   }
 }
 
+.fk-notification-widget {
+  text-align: center;
+  font: italic bold 3rem Lora;
+  padding: 1.5rem;
+
+  .row {
+    background-color: $event-orange;
+    padding: 1rem;
+  }
+
+  p {
+    margin: 0rem;
+    color: $white;
+  }
+
+}
+

@@ -36,6 +36,24 @@ $container   = get_theme_mod( 'understrap_container_type' );
 		endif;
 	?>
 
+  <section>
+
+      <?php if( is_active_sidebar( 'fk-notification-widgets' ) ) { ?> 
+      
+        <div class="container fk-notification-widget">
+
+	    	  <div class="row">
+      
+	    		  <?php dynamic_sidebar( 'fk-notification-widgets' ); ?>
+      
+          </div>
+          
+	    	</div>
+      
+	  	<?php }; ?>
+
+  </section>
+
 	<section class="<?php echo esc_attr( $container ); ?>"  id="fk-calendar">
 
 		<div class="row">

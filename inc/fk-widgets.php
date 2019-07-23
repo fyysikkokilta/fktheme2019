@@ -67,13 +67,23 @@ if ( ! function_exists( 'fk_widgets_init' ) ) {
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
-        ) );
+    ) );
         
-        register_sidebar( array(
+    register_sidebar( array(
 			'name'          => __( 'Footer', 'fk' ),
 			'id'            => 'fk-footer-widgets',
 			'description'   => __( 'Widget area for Footer', 'fk' ),
 			'before_widget' => '<div id="%1$s" class="static-hero-widget %2$s '. fk_slbd_count_widgets( 'fk-footer-widgets' ) .'">', 
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+    ) );
+    
+    register_sidebar( array(
+			'name'          => __( 'Notification', 'fk' ),
+			'id'            => 'fk-notification-widgets',
+			'description'   => __( 'Widget area e.g. for election notification', 'fk' ),
+			'before_widget' => '<div id="%1$s" class="static-hero-widget %2$s '. fk_slbd_count_widgets( 'fk-notification-widgets' ) .'">', 
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
