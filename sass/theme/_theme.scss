@@ -605,6 +605,49 @@ hr {
     margin: 0rem;
     color: $white;
   }
+}
 
+
+// Fuksikuva navigation styling
+.fuksikuva-navigation {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.year-button {
+  font: italic bold 1.2rem 'Lora', serif;
+  display: inline-block;
+  background-color: $event-orange;
+  padding: 1.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  
+  a {
+    text-decoration: none;
+  }
+  
+  &:hover {
+    background-color: $event-techred;
+  }
+  
+  &:hover > .year-button-text {
+    transform: scale(1.15);
+  }
+}
+
+.selected-year-button {
+  background-color: $event-techred !important;
+}
+
+.year-button-text {
+  color: white;
+  transition: all .2s ease-in-out;
+  margin-bottom: 0rem;
+}
+
+.all-fuksikuvat {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
