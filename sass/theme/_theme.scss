@@ -618,10 +618,13 @@ hr {
   font: italic bold 1.2rem 'Lora', serif;
   display: inline-block;
   background-color: $event-orange;
-  padding: 1.5rem;
   margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: 1rem;
+  width: 7rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  text-align: center;
   
   a {
     text-decoration: none;
