@@ -7,13 +7,11 @@
         'year' => '2018',
       ), $atts );
 
-    // TODO chage link before commit
-
       $dir = wp_upload_dir()['basedir'] . '/fuksikuvat';
       $folder_contents = glob(($dir . '/*') , GLOB_ONLYDIR);
       $folder_contents = array_reverse($folder_contents);  //Sort years to right order
       $pagination_index = 1;
-      $base_navigation_url = 'https://www.fyysikkokilta.fi/fuksikuvat/';
+      $base_navigation_url = 'https://www.fyysikkokilta.fi/fuksikuvat';
 
       $out = '<div class="row fuksikuva-navigation">';
       
