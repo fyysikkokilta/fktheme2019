@@ -5,13 +5,19 @@
     function fk_display_fuksit_navigation( $atts ) {
       $a = shortcode_atts( array(
         'year' => '2018',
+        'lang' => 'fi',
       ), $atts );
 
       $dir = wp_upload_dir()['basedir'] . '/fuksikuvat';
       $folder_contents = glob(($dir . '/*') , GLOB_ONLYDIR);
       $folder_contents = array_reverse($folder_contents);  //Sort years to right order
       $pagination_index = 1;
-      $base_navigation_url = 'https://www.fyysikkokilta.fi/fuksikuvat';
+
+      if ( $a['lang'] == 'en' ) {
+        $base_navigation_url = 'https://www.fyysikkokilta.fi/en/fuksikuvat';
+      } else {
+        $base_navigation_url = 'https://www.fyysikkokilta.fi/fuksikuvat';
+      }
 
       $out = '<div class="row fuksikuva-navigation">';
       
