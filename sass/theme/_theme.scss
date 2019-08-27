@@ -593,8 +593,15 @@ hr {
 
 .fk-notification-widget {
   text-align: center;
-  font: italic bold 3rem Lora;
+  font: italic bold 1.5rem Lora;
   padding: 1.5rem;
+  margin-bottom: -4.5rem;
+  padding-right: 30px;
+  padding-left: 30px;
+
+  @include media-breakpoint-up(md) { 
+    font-size: 2rem;
+  }
 
   .row {
     background-color: $event-orange;
@@ -615,16 +622,29 @@ hr {
 }
 
 .year-button {
-  font: italic bold 1.2rem 'Lora', serif;
+  font: italic bold 'Lora', serif;
   display: inline-block;
   background-color: $event-orange;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
-  width: 7rem;
+  h2 { font-size: 1.2rem; }
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 5.5rem;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   text-align: center;
+
+  @include media-breakpoint-up(sm) { 
+    h2 { font-size: 1.5rem; }
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    width: 6.5rem;
+  }
+
+  @include media-breakpoint-up(md) { 
+    h2 { font-size: 2rem; }
+  }
   
   a {
     text-decoration: none;
