@@ -18,23 +18,19 @@ $container   = get_theme_mod( 'understrap_container_type' );
 ?>
 
 <div class="wrapper-hero" id="page-wrapper">
-	<?php	
-		global $post;
-		$featuredImg = get_theme_mod( 'fk_front_image' );
-		if ($featuredImg):
-	?>
+  
 	<section class="container-fluid" id="fk-front-image" tabindex="-1">
-
-			<div class="row" id="fk-image">
-				<div class="col-12 px-0">
-					<img class="img-fluid" src="<?php echo $featuredImg; ?>">
-				</div>
-			</div>
+      
+    <div class="row" id="fk-image">
+      
+      <?php 
+        include_once 'php/front-page-slideshow.php';
+        fk_front_page_slideshow();
+      ?>
+    
+    </div>
 
 	</section><!-- fk-head-image container end -->
-	<?php 
-		endif;
-	?>
 
   <section>
 
