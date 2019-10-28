@@ -679,3 +679,51 @@ hr {
   margin-right: 10px;
 }
 
+
+
+/* .slide {
+  border: none; 
+  opacity: 0; 
+  position: absolute; 
+  top: 0; 
+  left: 0;
+  -webkit-transition: opacity 2s linear;
+  -moz-transition: opacity 2s linear;
+  -o-transition: opacity 2s linear;
+  transition: opacity 2s linear;
+}
+.visible {
+  opacity: 1;
+} */
+
+
+.hide {
+  opacity: 0;
+  transition: opacity 1.613s ease-in-out;
+}
+
+.show {
+  opacity: 1;
+}
+
+.front-page-image-container {
+  height: 40vh;
+}
+
+.front-page-image {
+  height: 40vh;
+  position: absolute;
+}
+
+@include media-breakpoint-up(md) { 
+  .front-page-image-container { height: 65vh; }
+  .front-page-image { height: 65vh; }
+}
+
+@include media-breakpoint-up(lg) { 
+  .front-page-image-container { height: 85vh; }
+  .front-page-image { height: 85vh; }
+}
+
+// TODO: use php to loop through pictures in frontpage-folder to make img:s
+// 
