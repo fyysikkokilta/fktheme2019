@@ -727,3 +727,25 @@ hr {
 
 // TODO: use php to loop through pictures in frontpage-folder to make img:s
 // 
+
+.jaos-header {
+  h3 {
+    text-align: left;
+    position: absolute;
+    top: 45%;
+  }
+}
+
+.jaos {
+  text-align: center; 
+  padding-top:10px;
+  p {
+    margin: 0.3rem;
+  }
+}
+
+.jaos-color-1 { background-color: $event-yellow; color: black }
+.jaos-color-2 { background-color: $event-orange; color: white }
+.jaos-color-3 { background-color: $event-blue; color: white }
+.jaos-color-4 { background-color: $event-green; color: white }
+.jaos-color-5 { background-color: $event-techred; color: white }
