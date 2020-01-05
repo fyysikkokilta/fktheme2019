@@ -18,7 +18,7 @@
                 $query->the_post();
                 if(get_field('raati_yesno') == True ) {
                     $string .= '<div class="col-6 col-md-4 col-lg-3 fk-raatilainen">';
-                    $string .= '<img src="' . get_field("raati_kuva") . '" class="rounded-circle" alt="' . get_field("raati_virka") . '">';
+                    $string .= '<img src="' . get_field("raati_kuva") . '" class="rounded-circle" style="display: block; margin-left: auto; margin-right: auto;" alt="' . get_field("raati_virka") . '">';
                     $string .= (get_field("raati_virka")  ? ('<h5 class="fk-raati-virka text-center">' . get_field("raati_virka") . '</h5>') : '');
                     $string .= '<p class="text-center">' . (get_field("raati_nimi") ? ('<span class="fk-raati-nimi">' . get_field("raati_nimi") . '</span><br>') : '');
                     $string .= (get_field("raati_mail") ? ('<a href="mailto:' . get_field("raati_mail") . '" target="_top"> <span class="fk-raati-mail">' . get_field("raati_mail") . '</span></a><br>') : '');
