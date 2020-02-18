@@ -750,26 +750,16 @@ hr {
 .jaos-color-4 { background-color: $event-green; color: white }
 .jaos-color-5 { background-color: $event-techred; color: white }
 
-/*
-input.wpcf7-form-control.wpcf7-submit {
-  background-color: $yellow;
+ // Board feedback submit button
+.wpcf7 input[type=submit] {
+  @extend .btn;
+  @extend .btn-outline-primary;
+  background-color: $orange;
   border: none;
   color: white;
-  padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  width: 100px;
 }
-
-input.wpcf7-form-control.wpcf7-submit:hover {
-  background-color: $yellow;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-*/
