@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 if( function_exists('acf_add_local_field_group') ):
 
@@ -12,6 +12,28 @@ if( function_exists('acf_add_local_field_group') ):
                 'name' => 'fk_raatilainen',
                 'type' => 'post_object',
                 'instructions' => 'Se raativirka, joka halutaan näytettävän sivun yhteydessä',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'raatilaiset',
+                ),
+                'taxonomy' => '',
+                'allow_null' => 0,
+                'multiple' => 0,
+                'return_format' => 'id',
+                'ui' => 1,
+            ),
+            array(
+                'key' => 'field_5bf2aa9d9cfd5',
+                'label' => 'Toinen raatilainen',
+                'name' => 'fk_raatilainen2',
+                'type' => 'post_object',
+                'instructions' => 'Se toinen raativirka, joka halutaan näytettävän sivun yhteydessä',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -161,7 +183,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'label' => 'Telegram',
                 'name' => 'raati_tg',
                 'type' => 'text',
-                'instructions' => 'Raatilaisen TG-nic, e.g. @puheenjohtaja',
+                'instructions' => 'Raatilaisen TG-nick, e.g. @puheenjohtaja',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
