@@ -20,7 +20,7 @@
 
         $class_index = 0;
         $color_classes = array("jaos-color-1","jaos-color-2","jaos-color-3","jaos-color-4","jaos-color-5");
-        
+
         // Description of the algorihm:
         //
         // Same person has picture only once inside the division. He/she can be his/her picture in many divisions.
@@ -32,7 +32,7 @@
         foreach ($jaokset as $jaos => $jaoksen_toimarivirat) {
           $out .= '<div class="col-lg-2 col-md-3 col-sm-4 col-6 jaos-header '.$color_classes[$class_index % count($color_classes)].'">
                   <h3>'.$jaos.'</h3>
-                  </div>'; 
+                  </div>';
           $henkilöt_jaoksessa = [];
 
           foreach ($jaoksen_toimarivirat as $toimarivirka) {
@@ -48,7 +48,7 @@
           foreach ($henkilöt_jaoksessa as $henkilö => $henkilön_toimarivirat_jaoksessa) {
             $out .= '<div class="col-lg-2 col-md-3 col-sm-4 col-6 jaos '.$color_classes[$class_index % count($color_classes)].'">
                       <img src='.$url.'/'.$folder.'/kuvat/'.$kuvat[$henkilö].'>
-                      <h5>'.$henkilö.'</h5>
+                      <strong><p>'.$henkilö.'<p></strong>
                       <p>'.implode(", ", $henkilön_toimarivirat_jaoksessa).'</p>
                       </div>';
           }
