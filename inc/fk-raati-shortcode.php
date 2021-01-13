@@ -5,7 +5,7 @@
         $args = array(
             'post_type' => 'raatilaiset',
             'post_status' => 'publish',
-            'posts_per_page' => '15',
+            'posts_per_page' => '20',
             'order' => 'ASC',
             'orderby' => 'menu_order',
         );
