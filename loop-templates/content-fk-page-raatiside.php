@@ -66,7 +66,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<p>
 			<?php echo (get_field("raati_nimi", $raati_ID3) ? ('<span class="fk-raati-nimi">' . get_field("raati_nimi", $raati_ID3) . '</span><br>') : ''); ?>
 			<?php echo (get_field("raati_mail", $raati_ID3) ? ('<a href="mailto:' . get_field("raati_mail", $raati_ID3) . '" target="_blank"> <span class="fk-raati-mail">' . get_field("raati_mail", $raati_ID3) . '</span></a><br>') : ''); ?>
-			<?php echo (get_field("raati_tg", $raati_ID3) ? ('<a href="https://t.me/' . substr(get_field("raati_tg", $raati_ID3), 1) . '" target="_blank"> <span class="fk-raati-tg">' . get_field("raati_tg", $raati_ID2) . '</span></a> &vert;') : ''); ?>
+			<?php echo (get_field("raati_tg", $raati_ID3) ? ('<a href="https://t.me/' . substr(get_field("raati_tg", $raati_ID3), 1) . '" target="_blank"> <span class="fk-raati-tg">' . get_field("raati_tg", $raati_ID3) . '</span></a> &vert;') : ''); ?>
 			<?php echo (get_field("raati_puhelin", $raati_ID3) ? ('<span class="fk-raati-puhelin">' . get_field("raati_puhelin", $raati_ID3) . '</span><br>') : ''); ?>
 		</p>
 		
