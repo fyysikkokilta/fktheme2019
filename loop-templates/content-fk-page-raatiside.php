@@ -40,6 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		$raati_ID2 = get_field("fk_raatilainen2");
 		$raati_ID3 = get_field("fk_raatilainen3");
 		$raati_ID4 = get_field("fk_raatilainen4");
+		$raati_ID5 = get_field("fk_raatilainen5");
 	?>
 
 	<div class="fk-raati-side">
@@ -77,6 +78,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php echo (get_field("raati_mail", $raati_ID4) ? ('<a href="mailto:' . get_field("raati_mail", $raati_ID4) . '" target="_blank"> <span class="fk-raati-mail">' . get_field("raati_mail", $raati_ID4) . '</span></a><br>') : ''); ?>
 			<?php echo (get_field("raati_tg", $raati_ID4) ? ('<a href="https://t.me/' . substr(get_field("raati_tg", $raati_ID4), 1) . '" target="_blank"> <span class="fk-raati-tg">' . get_field("raati_tg", $raati_ID4) . '</span></a> &vert;') : ''); ?>
 			<?php echo (get_field("raati_puhelin", $raati_ID4) ? ('<span class="fk-raati-puhelin">' . get_field("raati_puhelin", $raati_ID4) . '</span><br>') : ''); ?>
+		</p>
+		
+		<img src="<?php the_field("raati_kuva", $raati_ID5) ?>" class="rounded-circle" alt="<?php the_field("raati_virka", $raati_ID5); ?>">
+		<?php echo (get_field("raati_virka", $raati_ID5)  ? ('<h5 class="fk-raati-virka text-center">' . get_field("raati_virka", $raati_ID5) . '</h5>') : ''); ?>
+		<p>
+			<?php echo (get_field("raati_nimi", $raati_ID5) ? ('<span class="fk-raati-nimi">' . get_field("raati_nimi", $raati_ID5) . '</span><br>') : ''); ?>
+			<?php echo (get_field("raati_mail", $raati_ID5) ? ('<a href="mailto:' . get_field("raati_mail", $raati_ID5) . '" target="_blank"> <span class="fk-raati-mail">' . get_field("raati_mail", $raati_ID5) . '</span></a><br>') : ''); ?>
+			<?php echo (get_field("raati_tg", $raati_ID5) ? ('<a href="https://t.me/' . substr(get_field("raati_tg", $raati_ID5), 1) . '" target="_blank"> <span class="fk-raati-tg">' . get_field("raati_tg", $raati_ID5) . '</span></a> &vert;') : ''); ?>
+			<?php echo (get_field("raati_puhelin", $raati_ID5) ? ('<span class="fk-raati-puhelin">' . get_field("raati_puhelin", $raati_ID5) . '</span><br>') : ''); ?>
 		</p>
 	</div>
 </aside>
